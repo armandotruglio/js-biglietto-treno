@@ -22,3 +22,9 @@ console.log(resultOriginalPrice);
 
 const resultFinalPrice = document.getElementById('price-after-discount');
 console.log(resultFinalPrice);
+
+//Preparo le tre variabili
+
+const pricePerKm = 0.21;
+const minorDiscount = 0.2;
+const overDiscount = 0.4;

@@ -11,8 +11,8 @@ console.log('JS OK');
 */
 
 //Recuper elementi dal DOM
-const resultTravelLenght = document.getElementById('travel-lenght');
-console.log(resultTravelLenght);
+const resultTravelLength = document.getElementById('travel-length');
+console.log(resultTravelLength);
 
 const resultUserAge = document.getElementById('user-age');
 console.log(resultUserAge);
@@ -28,3 +28,27 @@ console.log(resultFinalPrice);
 const pricePerKm = 0.21;
 const minorDiscount = 0.2;
 const overDiscount = 0.4;
+
+//Chiedo all'utente i km da percorrere
+
+const travelLength = parseInt(prompt('Quanti km vuoi percorrere?', 20));
+console.log(travelLength);
+
+//Chiedo all'utente l'età
+
+const userAge = parseInt(prompt('Quanti hanni hai?', 20));
+console.log(userAge);
+
+//Genero il prezzo del biglietto moltiplicando i km per la variabile prezzo
+const originalPrice = travelLength * pricePerKm;
+console.log(originalPrice);
+
+// Verifico che l'utente sia un minore o un over65 e nel caso applico lo sconto relativo
+let finalPrice = originalPrice;
+if(userAge < 18){
+    finalPrice = originalPrice - (originalPrice * minorDiscount);
+} else if(userAge > 65){
+    finalPrice = originalPrice - (originalPrice * overDiscount);
+}
+
+console.log(finalPrice);

@@ -59,7 +59,7 @@ resultTravelLength.innerText = 'La lunghezza del viaggio è di ' + travelLength 
 resultUserAge.innerText = 'Hai ' + userAge + ' anni.';
 
 if(!finalPrice){
-    resultFinalPrice.innerText = 'Il prezzo del tuo biglietto è ' + finalPrice.toFixed(2) + ' €';
+    resultFinalPrice.innerText = 'Il prezzo del tuo biglietto è ' + originalPrice.toFixed(2) + ' €';
 } else{
     resultOriginalPrice.innerText = 'Il prezzo iniziale del tuo biglietto è ' + originalPrice.toFixed(2) + ' €';
     resultFinalPrice.innerText = 'Il prezzo del tuo biglietto dopo lo sconto applicato è ' + finalPrice.toFixed(2) + ' €';

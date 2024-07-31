@@ -7,7 +7,7 @@ console.log('JS OK');
 4. Chiedo all'utente l'età
 5. Genero il prezzo del biglietto moltiplicando i km per la variabile prezzo
 6. Verifico che l'utente sia un minore o un over65 e nel caso applico lo sconto relativo
-7. Inserisco il prezzo nell'elemento del DOM
+7. Inserisco il prezzo e il resto delle informazioni negli elementi del DOM
 */
 
 //Recuper elementi dal DOM
@@ -44,7 +44,7 @@ const originalPrice = travelLength * pricePerKm;
 console.log(originalPrice);
 
 // Verifico che l'utente sia un minore o un over65 e nel caso applico lo sconto relativo
-let finalPrice = originalPrice;
+let finalPrice;
 if(userAge < 18){
     finalPrice = originalPrice - (originalPrice * minorDiscount);
 } else if(userAge > 65){
@@ -52,3 +52,15 @@ if(userAge < 18){
 }
 
 console.log(finalPrice);
+
+//Inserisco il prezzo e il resto delle informazioni negli elementi del DOM
+
+resultTravelLength.innerText = 'La lunghezza del viaggio è di ' + travelLength + 'km.';
+resultUserAge.innerText = 'Hai ' + userAge + ' anni.';
+
+if(!finalPrice){
+    resultFinalPrice.innerText = 'Il prezzo del tuo biglietto è ' + finalPrice.toFixed(2) + ' €';
+} else{
+    resultOriginalPrice.innerText = 'Il prezzo iniziale del tuo biglietto è ' + originalPrice.toFixed(2) + ' €';
+    resultFinalPrice.innerText = 'Il prezzo del tuo biglietto dopo lo sconto applicato è ' + finalPrice.toFixed(2) + ' €';
+}
